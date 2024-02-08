@@ -97,7 +97,7 @@
   {
     /*background-color: #c1e8ff;*/   
     border: var(--azul-3) 2px solid;
-    width: 378px;
+    width: 50%;
     text-align: center;
     border-radius: 16px;
     font-size: 1.5rem;
@@ -126,8 +126,9 @@
     color: var(--azul-1);
     display: flex;
     justify-content: center;
-    background-color: var(--azul-2);
-    padding: 1.5rem;
+    background-color: var(--azul-3);
+    padding: 24px;
+    text-align: center;
   }
 
   
