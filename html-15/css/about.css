@@ -60,6 +60,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 5% 15%;
+      gap: 82px;
   }
 
   .conteudo-section
@@ -72,7 +73,7 @@
   }
   .perfil
   {
-
+   
   }
 
   .rodape
@@ -85,3 +86,21 @@
     background-color: var(--azul-2);
     padding: 24px;
   }
+
+  @media (max-width: 1200px)
+  {
+    .conteudo
+    {
+      flex-direction:column-reverse
+    }
+    .cabecalho
+    {
+      padding: 10%;
+      justify-content: space-between;
+    }
+    .cabecalho-nav
+    {
+      justify-content: center;
+    }
+  }
+  
