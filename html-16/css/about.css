@@ -17,8 +17,11 @@
   body 
   {
       /* height: 100vh; */
-      background-color: var(--preto);
-      color: #c1e8ff
+      background-image: url(/Public/Debbie\ Balboa.gif);
+      background-size:cover ;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: var(--azul-1)
   }
 
   .cabecalho
@@ -48,6 +51,11 @@
     font-size: 36px;
   }
 
+  .titulo1
+  {
+  color: var(--azul-3);
+  }
+
   .texto
   {
     font-size: 16px;
@@ -71,10 +79,6 @@
     gap: 40px;
     
   }
-  .perfil
-  {
-   
-  }
 
   .rodape
   {
@@ -87,6 +91,11 @@
     padding: 24px;
   }
 
+  .img
+  {
+    display: block;
+   
+  }
   @media (max-width: 1200px)
   {
     .conteudo

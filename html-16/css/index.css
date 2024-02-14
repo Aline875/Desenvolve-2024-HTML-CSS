@@ -18,7 +18,10 @@
   body 
   {
       /* height: 100vh; */
-      background-color: var(--preto);
+      background-image: url(/Public/Debbie\ Balboa.gif);
+      background-size:cover ;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       color: var(--azul-1)
   }
   .cabecalho
@@ -111,12 +114,13 @@
     display: flex;
     justify-content: center;
     gap: 16px;
+    background: linear-gradient( 40deg, var(--azul-3), var(--azul-1));
   }
 
   .link:hover 
   {
     color: var(--preto);
-    background-color: var(--azul-3);
+    background:linear-gradient(40deg, var(--azul-1), var(--azul-3))
   
   }
 
