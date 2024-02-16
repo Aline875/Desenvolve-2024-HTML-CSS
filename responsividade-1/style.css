@@ -1,3 +1,10 @@
+
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
 :root
 {
     --background-color:#EBECEE
@@ -6,4 +13,9 @@
 body
 {
     background-color: var(--background-color);
+}
+
+h1
+{
+    background-color: white;
 }
