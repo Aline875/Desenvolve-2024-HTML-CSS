@@ -36,6 +36,7 @@ position: relative;
     display: none;
     position: absolute;
     top: 100%;
+    width: 60vw;
 
 }
 
@@ -48,4 +49,18 @@ position: relative;
 {
   padding: 1em;
   background-color: var(--branco);
+   
+}
+.lista-menu-titulo
+{
+    color: var(--laranja);
+}
+
+.lista-menu-link
+{
+    background: var(--azul-degrade);
+    -webkit-background-clip: text;  
+    -webkit-text-fill-color: transparent;
+    background-clip: text;  /*esse background-clip: text. prende a cor escolhida no texto*/
+    text-transform: uppercase;
 }
