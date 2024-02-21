@@ -31,6 +31,10 @@ position: relative;
     padding: 1em;
 }
 
+.botao-container
+{
+    display: none;
+}
 .lista-menu
 {
     display: none;
@@ -54,6 +58,7 @@ position: relative;
 .lista-menu-titulo
 {
     color: var(--laranja);
+    font-weight: 700;
 }
 
 .lista-menu-link
@@ -63,4 +68,5 @@ position: relative;
     -webkit-text-fill-color: transparent;
     background-clip: text;  /*esse background-clip: text. prende a cor escolhida no texto*/
     text-transform: uppercase;
+    
 }
