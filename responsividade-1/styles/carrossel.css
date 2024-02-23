@@ -40,6 +40,7 @@
 {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 0.5em;
 }
 
 .botoes
@@ -55,8 +56,7 @@
 
 .botoes-item
 {
-  display: flex;
-  justify-content: space-between;
+   margin: 0 0.5em;
 }
 
 .descricao-titulo
@@ -70,9 +70,19 @@
   color: var(--azul);
   font-size: 18px;
   font-weight: 700;
+  margin: 0.5em 0;
 }
 
 .descricao-texto
 {
   font-size: 14px;
+}
+
+.botoes-ancora
+{
+  background: var(--laranja);
+  text-decoration: none;
+  padding: 1em 2.2em;
+  color: var(--branco);
+  font-weight: 700;
 }
