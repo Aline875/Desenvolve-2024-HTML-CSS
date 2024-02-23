@@ -50,10 +50,39 @@
         </section>
         <section class="carrossel">
             <h2 class="carrossel-titulo">Últimos lançamentos</h2>
+            <!-- Slider main container -->
+<div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide"><img src="/Public/Liderança.svg" alt="livro Liderança do AluraBooks"></div>
+      <div class="swiper-slide"><img src="/Public/Javascript.svg" alt="livro JavaScript do AluraBooks"></div>
+      <div class="swiper-slide"><img src="/Public/Guia Front-end.svg" alt="livro Guia Front-End do AluraBooks"></div>
+      <div class="swiper-slide"><img src="/Public/Portugol.svg" alt="Livro Portugol do AluraBooks"></div>
+      <div class="swiper-slide"><img src="/Public/Acessibilidade.svg" alt="Livro Acessibilidade do AluraBooks"></div>
+      ...
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+  
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
+  
         </section>
     </main>
     <footer></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+        spaceBetween: 10,
+        slidesPerView: 3,
+      });
+      </script>
 </body>
 </html>

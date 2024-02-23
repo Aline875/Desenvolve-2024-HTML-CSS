@@ -1,7 +1,3 @@
-.carrossel
-{
-  
-}
 
 .carrossel-titulo
 {
@@ -12,4 +8,19 @@
   font-size: 18px;
   font-weight: 700;
   padding: 1em 0 0.5em 0;
+}
+
+.swiper-slide img
+{
+  width: 100%;
+}
+
+.swiper-button-prev
+{
+  display: none;
+}
+
+.swiper-button-next
+{
+  display: none;
 }
