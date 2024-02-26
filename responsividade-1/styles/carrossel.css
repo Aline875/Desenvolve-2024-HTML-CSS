@@ -46,6 +46,7 @@
 .botoes
 {
   display: flex;
+  list-style-type: none;
 }
 
 .card-botoes

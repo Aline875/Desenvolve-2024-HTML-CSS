@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AluraBooks</title>
-    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="/Public/icons8-literatura-32.png" type="image/x-icon">
 </head>
 <body>
+    <!--header.css-->
     <header class="cabecalho">
         <div class="container">
             <input type="checkbox" id="menu" class="botao-container">
@@ -42,12 +43,16 @@
         <a href="#"><img src="/Public/Usuario.svg" alt="Meu Perfil" class="imagem-container"></a>
     </div>
     </header>
+    <!--header.css-->
     <main>
+        <!--banner.css-->
         <section class="banner">
             <h2 class="banner-titulo">Já sabe por onde começar?</h2>
             <p class="banner-texto">Encontre em nossa estante o que você precisa para o seu desenvolvimento!</p>
             <input type="search" class="banner-pesquisa" placeholder="Qual será a sua proxima leitura?">
         </section>
+        <!--banner.css-->
+        <!--carrossel.css-->
         <section class="carrossel">
             <h2 class="carrossel-titulo">Últimos lançamentos</h2>
             <!-- Slider main container -->
@@ -122,9 +127,68 @@
     <!-- If we need scrollbar 
     <div class="swiper-scrollbar"></div> -->
   </div>
-    </main>
-    <footer></footer>
 
+  <!--1ª linha-->
+  <div class="card">
+    <!--1ª coluna-->
+    <img src="/Public/Estrelinhas.svg">
+    <div class="card-descricao">
+        <div class="descricao">
+            <h3 class="descricao-titulo">Autora do Mês </h3>
+            <h2 class="descricao-titulo-livro">Juliana Agarikov</h2>
+            <p class="descricao-texto">Analista de sistemas e escritora,julia é especialista em Front-End</p>
+        </div>
+        <!--2ª coluna-->
+        <img src="/Public/Escritora.svg" class="descricao-imagem">
+    </div>
+    <!--2ª linha-->
+    <div class="card-botoes">
+       <ul class="botoes">
+        <li class="botoes-item"><img src="/Public//Favoritos.svg" alt="Favoritar livro"></li>
+        <li class="botoes-item"><img src="/Public/Compras.svg" alt="Adicionar ao carrinho"></li>
+       </ul>
+       <!--2ª coluna-->
+       <a href="#" class="botoes-ancora">Saiba mais</a>
+    </div>
+</div>
+</section>
+<!--carrossel.css-->
+<section class="topicos">
+    <h2 class="topicos-titulo">TÓPICOS VISITAODS RECENTEMENTE</h2>
+    <ul class="topicos-lista">
+        <li class="topicos-item">
+            <a href="#" class="topicos-link">Android</a>
+        </li>
+        <li class="topicos-item">
+            <a href="#" class="topicos-link">Marketing Digital</a>
+        </li>
+        <li class="topicos-item">
+            <a href="#" class="topicos-link">Agile</a>
+        </li>
+        <li class="topicos-item">
+            <a href="#" class="topicos-link">Startups</a>
+        </li>
+        <li class="topicos-item">
+            <a href="#" class="topicos-link">HTML & CSS</a>
+        </li>
+        <li class="topicos-item">
+            <a href="#" class="topicos-link">Python</a>
+        </li>
+        <li class="topicos-item">
+            <a href="#" class="topicos-link">OO</a>
+        </li>
+        <li class="topicos-item">
+            <a href="#" class="topicos-link">Java</a>
+        </li>
+    </ul>
+</section>
+<Section class="contato">
+    <h2 class="contato-titulo">Fique por dentro adas novidades!</h2>
+    <p class="contato-descricao">Atualizações de e-books, novos livros, promoções e outros.</p>
+    <input type="email" class="contato-email" placeholder="Cadastre seu email?">
+</Section>
+    </main>
+    <footer>Grupo Alura</footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {
