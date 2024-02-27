@@ -72,6 +72,11 @@ position: relative;
     display: none;
 }
 
+.opcoes
+{
+    display: none;
+}
+
 @media screen and (min-width: 1024px) /*colocamos min quando começamos pelo design mobile e max quando começamos pelo desktop*/
  {
 
@@ -87,6 +92,30 @@ position: relative;
     .container-titulo-bold {
         font-weight: 700;
     }
+
+    .opcoes
+    {
+        display: flex;
+        list-style-type: none;
+    }
+
+    .opcoes-item
+    {
+        padding: 0 1em;
+        text-transform: uppercase;
+    }
+
+   .opcoes-link
+   {
+     text-decoration: none;
+     color: var(--preto);
+   }
+
+   .container-coracao
+   {
+    display: none;
+   }
+
 }
 
  
