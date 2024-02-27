@@ -38,3 +38,22 @@
     background: url(/Public/Lupa.svg) no-repeat;
     background-position: 1px ;
 }
+
+@media screen and (min-width: 1024px) 
+{
+    .banner-titulo
+    {
+        font-size: 36px;
+    }
+
+    .banner-pesquisa
+    {
+        width: 50%;
+    }
+
+   .banner-pesquisa::placeholder
+   {
+    background-position: 6em;
+   }
+
+}
