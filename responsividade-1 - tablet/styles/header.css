@@ -15,15 +15,12 @@ position: relative;
     background-repeat: no-repeat;
     background-position: center;
     display: inline-block;
- 
-
 }
 
 .container
 {
     display: flex;
     align-items: center;
-
 }
 
 .imagem-container
@@ -41,7 +38,6 @@ position: relative;
     position: absolute;
     top: 100%;
     width: 60vw;
-
 }
 
 .botao-container:checked ~ .lista-menu
@@ -71,21 +67,20 @@ position: relative;
     
 }
 
-@media screen and(min-width: 1024px) /*colocamos min quando começamos pelo design mobile e max quando começamos pelo desktop*/
-{
-   .container-titulo,.container-titulo-bold
-   {
-    font-family: var( --font-familly-josefin);
-    font-size: 30px;
-   }
 
-   .container-titulo
-   {
-    font-weight: 400;
-   }
+@media screen and (min-width: 1024px) {
 
-   .container-titulo-bold
-   {
-    font-weight: 700;
-   }
+    .container-titulo,
+    .container-titulo-bold {
+        font-family: var(--fonte-secundaria);
+        font-size: 30px;
+    }
+    .container-titulo {
+        font-weight: 400;
+    }
+    .container-titulo-bold {
+        font-weight: 700;
+    }
 }
+ /*colocamos min quando começamos pelo design mobile e max quando começamos pelo desktop*/
+ 
