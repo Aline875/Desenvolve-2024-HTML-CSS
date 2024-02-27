@@ -116,6 +116,23 @@ position: relative;
     display: none;
    }
 
+   .menu-hamburguer
+   {
+    display: none;
+   }
+
+   .botao-menu-opcoes:checked ~ .lista-menu
+   {
+     display: block;
+     width: auto;
+     list-style-type: none;
+   }
+
+   .botao-menu-opcoes
+   {
+    display: none;
+   }
+
 }
 
  
