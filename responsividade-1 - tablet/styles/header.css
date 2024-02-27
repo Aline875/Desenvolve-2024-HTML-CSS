@@ -67,6 +67,10 @@ position: relative;
     
 }
 
+.container-titulo
+{
+    display: none;
+}
 
 @media screen and (min-width: 1024px) /*colocamos min quando começamos pelo design mobile e max quando começamos pelo desktop*/
  {
@@ -78,6 +82,7 @@ position: relative;
     }
     .container-titulo {
         font-weight: 400;
+        display: block;
     }
     .container-titulo-bold {
         font-weight: 700;
