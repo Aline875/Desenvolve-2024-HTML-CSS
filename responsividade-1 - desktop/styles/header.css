@@ -37,6 +37,11 @@ position: relative;
 {
     background-image: url(../Public/Menu\ Aberto.svg);
 }
+
+.botao-container:checked~ .container-rotulo
+{
+    background: var(--azul-degrade);
+}
 .lista-menu
 {
     display: none;
