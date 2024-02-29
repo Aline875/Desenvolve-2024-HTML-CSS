@@ -32,6 +32,11 @@ position: relative;
 {
     display: none;
 }
+
+.botao-container:checked ~ .container-rotulo > .menu-hamburguer
+{
+    background-image: url(/Public/Menu\ Aberto.svg);
+}
 .lista-menu
 {
     display: none;
