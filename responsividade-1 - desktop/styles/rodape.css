@@ -58,13 +58,10 @@ hr
 
 .rodape-link:hover
 {
-  color: var(--cinza-claro);
+  color: var(--laranja);
+  
 }
 
-.rodape-link:hover:active
-{
-  color: var(--laranja);
-}
 
 }
 
@@ -80,16 +77,5 @@ hr
   {
     padding: 3em 0;
   }
-
-  .rodape-link:hover
-  {
-    color: var(--cinza-claro);
-  }
-  
-  .rodape-link:hover:active
-  {
-    color: var(--laranja);
-  }
-  
 
 }

@@ -49,7 +49,7 @@
 
 .topicos-link:hover
 {
-  background-color: orangered;
+  background-color:var(--laranja-escuro);
 }
 
 .topicos-link:hover:active
