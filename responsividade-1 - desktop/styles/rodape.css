@@ -56,6 +56,16 @@ hr
     font-weight: 300;
 }
 
+.rodape-link:hover
+{
+  color: var(--cinza-claro);
+}
+
+.rodape-link:hover:active
+{
+  color: var(--laranja);
+}
+
 }
 
 @media screen and (min-width:1728px)
@@ -70,4 +80,16 @@ hr
   {
     padding: 3em 0;
   }
+
+  .rodape-link:hover
+  {
+    color: var(--cinza-claro);
+  }
+  
+  .rodape-link:hover:active
+  {
+    color: var(--laranja);
+  }
+  
+
 }
