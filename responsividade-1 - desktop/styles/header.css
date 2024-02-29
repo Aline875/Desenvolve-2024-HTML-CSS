@@ -160,19 +160,17 @@ position: relative;
     padding: 2em 1em;
    }
 
-   .lista-menu-item:hover
-   {
-     background: var(--azul-degrade);
+   .lista-menu-item:hover {
+    background: var(--azul-degrade);
    }
 
-   .lista-menu-item:hover>.lista-menu-link
+   .lista-menu-item:hover > .lista-menu-link 
    {
     -webkit-text-fill-color: var(--branco);
     text-decoration: none;
+
    }
-
-}
-
+ }
  @media screen and (min-width:1728px)
  {
       .container-link
