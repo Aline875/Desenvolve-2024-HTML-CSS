@@ -38,10 +38,11 @@ position: relative;
     background-image: url(../Public/Menu\ Aberto.svg);
 }
 
-.botao-container:checked~ .container-rotulo
+.botao-container:checked ~ .container-rotulo
 {
     background: var(--azul-degrade);
 }
+
 .lista-menu
 {
     display: none;
@@ -146,6 +147,28 @@ position: relative;
    .botao-menu-opcoes
    {
     display: none;
+   }
+
+   .botao-menu-opcoes:checked ~ .opcoes-rotulo > .opcoes-item
+   {
+       background:var(--azul-degrade);
+       color: var(--branco);
+   }
+   
+   .opcoes-item
+   {
+    padding: 2em 1em;
+   }
+
+   .lista-menu-item:hover
+   {
+     background: var(--azul-degrade);
+   }
+
+   .lista-menu-item:hover>.lista-menu-link
+   {
+    -webkit-text-fill-color: var(--branco);
+    text-decoration: none;
    }
 
 }
