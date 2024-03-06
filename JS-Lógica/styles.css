@@ -1,0 +1,23 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+.container-titulo
+{
+    display: flex;
+    justify-content: center;
+}
+
+.texto
+{
+    display: flex;
+    justify-content: center;
+}
+
+.ancora
+{
+    display: flex;
+    justify-content: center;
+}
