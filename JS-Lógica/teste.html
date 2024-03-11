@@ -83,6 +83,25 @@
 
         document.write("Consumo de Gasolina é de " + consumoDeGasolina +" Km/L.<br>");
         document.write("Consumo de Álcool é de " + consumoDeAlcool +" Km/L.<br>");
+        //Para deixar a manutenção do código mais facil a melhor opção édeclarar uma variável.
+
+        var puloDeLinha = "<br>"
+        document.write("manutenção de codigo" + puloDeLinha)
+        document.write("Aline Beatriz e Yonara Mirellys" + puloDeLinha)
+        //outra forma de manutenção de código com a fuction.
+        //A melhor maneira decrver uma fuction é usando um verbo para indicar uma ação.
+        //A function deve ser declarada a cima do código para que seja aplicada.
+        function pulaLinha()
+        {
+            document.write("<br>")
+        };
+
+        document.write("Manutenção do documento com uma function")
+        pulaLinha()
+        document.write("usei uma funtion para pular uma linha")
+
+
+
 
     </script>
 </body>
