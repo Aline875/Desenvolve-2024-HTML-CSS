@@ -66,7 +66,23 @@
         var idadeJoaquim = 20
         var idadeBarney = 41
         media = (idadeBarney + idadeFlavio + idadeJoaquim)/3
-        document.write("A idade média das idades é " + Math.round(media))
+        document.write("A idade média das idades é " + Math.round(media)+"<br>");
+        
+        //Exércicio 3
+        var tanque = 40
+        var caminhoComGasolina = 480
+        var caminhoComAlcool = 300
+
+        document.write("Consumo de Gasolina por quilometro é de " + Math.round(caminhoComGasolina/tanque) +" Quilometros por litro.<br>");
+        document.write("Consumo de Álcool por quilometro é de " + (caminhoComAlcool/tanque) +" Quilometros por litro.<br>");
+
+        //ou 
+        
+        var consumoDeGasolina = caminhoComGasolina/tanque
+        var consumoDeAlcool = caminhoComAlcool/tanque
+
+        document.write("Consumo de Gasolina é de " + consumoDeGasolina +" Km/L.<br>");
+        document.write("Consumo de Álcool é de " + consumoDeAlcool +" Km/L.<br>");
 
     </script>
 </body>
