@@ -22,6 +22,7 @@
         //alert("minha idade é")
        // alert(20)
         var ano = 2024; 
+        var anoN = 2003;
         // as variaveis devem ficar acima do codigo para melhor vissibilidade e para que o codigo consiga le-la
         document.write("minha idade é 20 <br>");
         document.write("a idade de aline é ")
@@ -31,13 +32,36 @@
         document.write("<br>A media das idades de uma turma do ensino medio é ")
         document.write((16+17+15)/3);
         //cuidado ao fazer contas em linguagens de programação pois assim como na matematica existe uma ordem correta para divisão e multiplicação apenas lembre-se de deixar as contas que devem ser feitas primeiro entre parenteses. tambem se aplica a concatenação de textos.
-        
+
+        //caso você queira mudar realocar o valor de uma variavel apenas a reescreva não é necessario declara-la novamente como por exemplo.
         document.write("<br>Aline nasceu em " + (2024-21)+"<br>");
         document.write("Eu acertei " + 15/50*100 + "%<br>");
         document.write("aline tem " + ( ano -2003) + " anos<br>");
+        
+        //Um perfeito exemplo de como reutilizar uma variável.
+        ano = 2026
         document.write("narinha tem " + ( ano-2004) + " anos<br>");
+        document.write("Aline nasceu em " + (anoN)+"<br>");
+
+        //exercício
+        var n = 5
+
+        document.write("O resultado da formula é " + n*(10/20)+"<br>");
+
+        //exercício 2
+        var mes = 6;
+        document.write("Realizei a minha prova no mês "+ mes + ".<br>");
+
+        mes = 7;
+        document.write("Perdão realizei a prova no mês " + mes + ".<br>");
         
-        
+        var media = (39 +20 + 41)/3;
+        document.write("A média das idades é " + media +"<br>");
+
+        //para a arredondar uma dizima periodica usamos Math.round. Exemplo
+
+        document.write("A media dasa idades é " + Math.round(media)+ "<br>")
+
     </script>
 </body>
 </html>
