@@ -96,13 +96,22 @@
             document.write("<br>")
         };
 
-        document.write("Manutenção do documento com uma function")
-        pulaLinha()
-        document.write("usei uma funtion para pular uma linha")
+        document.write("Manutenção do documento com uma function");
+        pulaLinha();
+        document.write("usei uma funtion para pular uma linha");
+        //Para fazer com que uma function pegue o valor alocado dentro dos parenteses temos que dar a ela uma variavel onde ela buscará o valor a ser mostrado em tela. Neste caso daremos um nome a essa function e tambem adicionaremos uma variavel a ela. Apos ativar a function dentro do código deve-se colocar o que deveja mostrar dentro dos parenteses da function para que ela exiba o que você quer.
+        function mostra(n)
+        {
+            document.write(n)
+        };
+        pulaLinha();
+        mostra("Flavio tem "+ (ano-1977)+" anos.");
 
+        pulaLinha();
+        
+        mostra("aline tem "+ (2024 - anoN) + " anos");
 
-
-
+        pulaLinha();
     </script>
 </body>
 </html>
