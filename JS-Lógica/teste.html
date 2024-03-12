@@ -115,13 +115,60 @@
 
         function mostrar(n)
         {
-            pulaLinha()
+            document.write("*******************************************");
+            pulaLinha();
             document.write(n);
             pulaLinha();
         };
 
         mostrar("Aline");
-        mostrar("Narinha")
+        mostrar("Narinha");
+
+        //Exercício 4
+        function msotrarIadade()
+        {
+          var minhaIdade = 21;
+          var idadeDoIrmao = 14;
+          var subtracao = minhaIdade - idadeDoIrmao;
+          document.write("A diferença entre nossas idades é de " + subtracao + " anos");
+          pulaLinha()
+        };
+
+        msotrarIadade();
+
+        //ou
+
+        function mostrarIdades2(frase)
+        {
+            document.write(frase);
+            pulaLinha()
+        };
+        minhaIdade =18;
+        idadeDoIrmao=15;
+        mostrarIdades2("Nossa diferença de idade é "+ (minhaIdade - idadeDoIrmao));
+
+        //Exercício 5
+
+        function mediaDeBR()
+        {
+            var anoAtual = 2024;
+            var mediaTotal = (anoAtual - 1500)/28;
+            document.write("Já se passaram "+ Math.round(mediaTotal) + " gerações de Brasileiros.")
+            pulaLinha()
+        };
+        mediaDeBR();
+
+        //ou
+        function mediaDeBR2(frase)
+        {
+            document.write(frase)
+            pulaLinha()
+        };
+        anoAtual = 2024;
+        var idadeMediaQuandoTemFilhos = 28;
+        var quantidadeDeGeracoes = (anoAtual - 1500)/idadeMediaQuandoTemFilhos;
+
+        mediaDeBR2(Math.round(quantidadeDeGeracoes)+" gerações");
     </script>
 </body>
 </html>
