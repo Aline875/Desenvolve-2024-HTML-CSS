@@ -8,6 +8,7 @@
     <title>IMC</title>
 </head>
 <body>
+    <h1>Testes com o calculo do IMC usando funcitons</h1>
     <script>
         function pulaLinha()
         {
@@ -54,7 +55,7 @@
 
         //podemos duas fuctions utilizandos variaveis para declarar os valores atribuidos e somalas como variveis. Assim soma-se os dois resultados dos imcs de Aline e narinha. De primeira o calculo está mostrando que os valores estão indefinidos, isso se da pelo simples fato que não dissemos para onde esses valores devem voltar, neste caso deve-se retornar a variável "imc", e para isso usamos o comando return.
 
-        // vou colocar o exemplo do professor para ficar claro o entendimento dessa questão 
+        // vou colocar o exemplo do professor para ficar claro o entendimento dessa questão.
 
         function calcularImc(altura, peso)
         {
@@ -69,11 +70,22 @@
         mostra(imcFlavio);
         mostra(imcAmigo);
         var totalImc = imcFlavio+imcAmigo;
-        document.write("A soma dos imc's é de " + totalImc)
+        document.write("A soma dos imc's é de " + totalImc);
+        pulaLinha();
         
-        //Tudo o que está no return vai ser atribuido a variavel em que a function é chamada. Como no exemplo acima que iniciamos declarando uma variavel e depois retiramos a variavel a alocamos no return e o resultado continuou o mesmo
+        //Tudo o que está no return vai ser atribuido a variavel em que a function é chamada. Como no exemplo acima que iniciamos declarando uma variavel e depois retiramos a variavel a alocamos no return e o resultado continuou o mesmo.
 
 
+        //Agora iremos interagir com o usuário.
+        //o prompt  pega as informações  do usuario e aloca dentro de uma variavel
+        var nome = prompt("Qual o seu nome?");
+        var alturaInformada = prompt( nome+", a sua altura?");
+        var pesoInformado = prompt( nome+", o seu peso?");
+        var imc = calcularImc(alturaInformada, pesoInformado);
+        document.write(nome + " o resultado do seu IMC é "+ imc);
+
+        //Exercício 7
+        
     </script>
 </body>
 </html>
