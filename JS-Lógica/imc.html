@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles.css">
-    <title>Document</title>
+    <link rel="shortcut icon" href="/Public/icons8-javascript-32.png" type="image/x-icon">
+    <title>IMC</title>
 </head>
 <body>
     <script>
@@ -33,6 +34,7 @@
         mostra("O imc de Narinha é de " + Math.round(imcNarinha));
 
         //deixando o calculo de imc mais facil com uma função. Para isso nos deizemos a função que ela recebera dois valores, "altura" e "peso" como no exemplo abaixo. Depois declaramos a variavel desejada e monstamos a formula do calculo como a do "imc" depois chamamos outrafunção para receber os parametros de frase e da variavel, e por ultimo chamados a function do calculo e alocamos os valores desejados.
+
         function calculaImc(peso, altura)
         {
            var imc = peso / (altura*altura);
@@ -41,7 +43,34 @@
         calculaImc(55, 1.67);
         calculaImc(50, 1.55);
 
-        //exercício 
+        //exercício 6
+
+        function somaDoisNumeros(n1, n2)
+        {
+            var soma = n1 + n2;
+            mostra("A soma dos dois números é de " + soma);
+        };
+        somaDoisNumeros(3,5);
+
+        //podemos duas fuctions utilizandos variaveis para declarar os valores atribuidos e somalas como variveis. Assim soma-se os dois resultados dos imcs de Aline e narinha. De primeira o calculo está mostrando que os valores estão indefinidos, isso se da pelo simples fato que não dissemos para onde esses valores devem voltar, neste caso deve-se retornar a variável "imc", e para isso usamos o comando return.
+
+        // vou colocar o exemplo do professor para ficar claro o entendimento dessa questão 
+
+        function calcularImc(altura, peso)
+        {
+            var imc = peso / (altura*altura);
+            return imc;
+        }
+
+        var imcFlavio =calcularImc(1.71,73);
+        var imcAmigo = calcularImc(1.72,68);
+
+        mostra(imcFlavio);
+        mostra(imcAmigo);
+        
+        //Tudo o que está no return vai ser atribuido a variavel em que a function é chamada
+
+
     </script>
 </body>
 </html>
