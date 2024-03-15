@@ -82,9 +82,14 @@
         var alturaInformada = prompt( nome+", a sua altura?");
         var pesoInformado = prompt( nome+", o seu peso?");
         var imc = calcularImc(alturaInformada, pesoInformado);
-        document.write(nome + " o resultado do seu IMC é "+ imc);
+        mostra(nome + " o resultado do seu IMC é "+ imc);
 
         //Exercício 7
+        mostra("<h3>Multiplicação</h3>")
+        var n1 = prompt ("Digite o primerio número:");
+        var n2 = prompt ("Digite o segundo número:");
+        var total = n1*n2;
+        mostra("O resultado da mutltiplicação entre " + n1 +" e " + n2 + " é " + total);
         
     </script>
 </body>
