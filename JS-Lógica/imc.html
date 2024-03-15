@@ -58,8 +58,9 @@
 
         function calcularImc(altura, peso)
         {
-            var imc = peso / (altura*altura);
-            return imc;
+            //var imc = peso / (altura*altura);
+            
+            return Math.round(peso/(altura*altura));
         }
 
         var imcFlavio =calcularImc(1.71,73);
@@ -67,8 +68,10 @@
 
         mostra(imcFlavio);
         mostra(imcAmigo);
+        var totalImc = imcFlavio+imcAmigo;
+        document.write("A soma dos imc's é de " + totalImc)
         
-        //Tudo o que está no return vai ser atribuido a variavel em que a function é chamada
+        //Tudo o que está no return vai ser atribuido a variavel em que a function é chamada. Como no exemplo acima que iniciamos declarando uma variavel e depois retiramos a variavel a alocamos no return e o resultado continuou o mesmo
 
 
     </script>
