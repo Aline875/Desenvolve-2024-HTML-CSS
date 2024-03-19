@@ -84,6 +84,28 @@
         var imc = calcularImc(alturaInformada, pesoInformado);
         mostra(nome + " o resultado do seu IMC é "+ imc);
 
+        //No exemplo que escrevi antes do professor tem uma pequena falha onde a mensagem "peso normal " aparece independente do valor. Vou deixar o codigo abaixo para melhor análise
+        //if(imc >= 18.5 )
+        //{
+        //    mostra("Está no peso normal")
+        //}
+        //Eu só precisava tira o maior que k. palhaçada viu.
+
+        if (imc > 25)
+        {
+            mostra(" Está acima do peso precisa emagrecer")
+        }
+
+        if(imc == 18.5 )
+        {
+            mostra("Está no peso normal")
+        }
+
+        if (imc <=18.49)
+        {
+            mostra("Está abaixo do peso precisa ganhar massa")
+        }
+
         //Exercício 7
         mostra("<h3>Multiplicação</h3>")
         var n1 = prompt ("Digite o primerio número:");
