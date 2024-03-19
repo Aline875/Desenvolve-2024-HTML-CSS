@@ -89,19 +89,26 @@
         //{
         //    mostra("Está no peso normal")
         //}
+        // Era necessário a adição de um if dentro de um if para que a condição parasse de exibir o texto na hora errada. Como no exemplo abaixo.
+        //if(imc >= 18 )
+        //{
+        //    if(imc <= 24)
+        //    {
+        //        mostra(nome +" você está no peso recomendado")
+        //    }    
+        //}
+        //Porem há uma outra maneira de deixar o código menos robusto 
+
+
 
         if (imc > 25)
         {
             mostra(nome + " você está acima do recomendado")
         }
 
-        if(imc >= 18 )
+        if(imc >= 18 && imc <=24 )
         {
-            if(imc <= 24)
-            {
                 mostra(nome +" você está no peso recomendado")
-            }
-            
         }
 
         if (imc < 18)
@@ -118,4 +125,4 @@
         
     </script>
 </body>
-</html>
+</html> 
