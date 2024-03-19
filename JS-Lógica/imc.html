@@ -89,21 +89,24 @@
         //{
         //    mostra("Está no peso normal")
         //}
-        //Eu só precisava tira o maior que k. palhaçada viu.
 
         if (imc > 25)
         {
-            mostra(" Está acima do peso precisa emagrecer")
+            mostra(nome + " você está acima do recomendado")
         }
 
-        if(imc == 18.5 )
+        if(imc >= 18 )
         {
-            mostra("Está no peso normal")
+            if(imc <= 24)
+            {
+                mostra(nome +" você está no peso recomendado")
+            }
+            
         }
 
-        if (imc <=18.49)
+        if (imc < 18)
         {
-            mostra("Está abaixo do peso precisa ganhar massa")
+            mostra(nome + " você está abaixo do recomendado")
         }
 
         //Exercício 7
