@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de adivinhação</title>
+    <link rel="shortcut icon" href="/Public/icons8-javascript-32.png" type="image/x-icon">
+</head>
+<body>
+    <script>
+        function pulaLinha()
+        {
+            document.write("<br><br>");
+        }
+        function mostra(frase)
+        {
+            document.write(frase);
+            pulaLinha();
+        }
+
+        var numeroPensado = Math.round(Math.random()*10);
+        var chute = parseInt(prompt("Digite um número"));
+
+        if (chute == numeroPensado)
+        {
+            mostra("Parábens você acertou!!!!");
+        }
+        else
+        {
+            mostra("Que pena não foi dessa vez, o número foi " + numeroPensado);
+        };
+
+        //tentando com números aleatorios antes do professor mostrar como se faz. Não deu certo éum pouco mais dificil do que eu pensei. Eu apaguei o caodigo que tinha escrito antes junto o professor, estava funcionando aparentemente  mas acabou ficando confuso, então achei melhor apagar e deixar o novo codigo no lugar. Ele tambem funciona mas não mostra o resultado antes. Aparentemente tem um bug de atulização nas functions relacinado ao "document.write", ainda não sei oque esse bug quer dizer mas se funciona eu vou deixar assim.
+    </script>
+</body>
+</html>
