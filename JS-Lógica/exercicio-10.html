@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercício 10</title>
+    <link rel="shortcut icon" href="/Public/icons8-javascript-32.png" type="image/x-icon">
 </head>
 <body>
     <script>
+        //minha resolução não apareceu em tela então passei direto para a resolução do professor
         function pulaLinha()
         {
             document.write("<br><br>");
@@ -17,13 +19,14 @@
             pulaLinha();
         }
 
-        var numeropPar=2
-        numeropPar = numeropPar *2;
-
-        while(numeropPar <= 10)
+        var contador=2;
+        while(contador <= 100)
         {
-            mostra("Número par " + numeropPar)
+            mostra(contador);
+            contador = contador + 2;
         }
+
+        mostra("Fim")
     </script>
 </body>
 </html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+    <link rel="shortcut icon" href="/Public/icons8-javascript-32.png" type="image/x-icon">
+</head>
+<body>
+    <script>
+        //minha resolução 
+        //novamente tive que ir direto para a resolução do professor
+        //meu chrome ta bugado então ele não ta regarregando a pagina então lembre-se de encerrar o live server para que funcione direito.
+        function pulaLinha()
+        {
+            document.write("<br><br>");
+        }
+        function mostra(frase)
+        {
+            document.write(frase);
+            pulaLinha();
+        }
+
+        var contador = 30;
+        while(contador <= 40 )
+        {
+            if(contador == 33)
+            {
+                contador = contador + 1;
+            }
+
+            else if(contador == 37)
+            {
+               contador = contador + 1;
+            }
+            else
+            {
+                mostra(contador);
+                contador = contador + 1;
+            }
+        }
+        mostra("Fim");
+    </script>
+</body>
+</html>
