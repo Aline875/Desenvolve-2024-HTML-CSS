@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+</head>
+<body>
+    <script>
+        //Minha resolução
+        function pulaLinha()
+        {
+            document.write("<br><br>")
+        }
+
+        function mostra(frase)
+        {
+            document.write(frase)
+            pulaLinha()
+        }
+
+        var idade = parseInt(prompt("Qual a sua idade? "))
+        var temCarteira = prompt("Tem carteira? Responda S ou N")
+
+        if(idade >= 18 && temCarteira == "S")
+        {
+            mostra("Pode dirigir")
+        }
+        else 
+        {
+            mostra("Não pode dirigir")
+        }
+
+        //Resolução do professor
+        //Não preciso escrever, minha resolução foi igual a do professor
+    </script>
+</body>
+</html>

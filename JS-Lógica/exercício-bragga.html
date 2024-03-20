@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,49 @@
     <link rel="shortcut icon" href="/Public/icons8-javascript-32.png" type="image/x-icon">
 </head>
 <body>
-    <script></script>
+    <script>
+        //Minha resolução
+        function pulalinha()
+        {
+            document.write("<br><br>");
+        }
+        
+        function mostra(frase)
+        {
+            document.write(frase)
+            pulalinha()
+        }
+
+        var carbono = (parseInt(prompt("Digite a quantidade de carbono da primeira substância: ")));
+        var carbono2  = (parseInt(prompt("Digite a quantidade de carbono da segunda subtância substancia: ")));
+        carbono2 = carbono2 + 2;
+        
+        if (carbono == carbono2)
+        {
+            mostra("As duas substancias são iguais");
+        }
+
+        else
+        {
+            mostra("As duas substancias são diferentes");
+        }
+
+        //Resolução do professor
+
+        var quantidadeCarbono1 = parseInt(prompt("Quantidade de carbono substância 1"));
+        var quantidadeCarbono2 = parseInt(prompt("Quantidade de carbono substância 2"));
+
+        quantidadeCarbono2 = quantidadeCarbono2 + 2;
+
+        if(quantidadeCarbono1 == quantidadeCarbono2)
+        {
+            mostra("Acho que as substâncias são parecidas");
+        }
+
+        else
+        {
+            mostra("São substâncias bem diferentes");
+        };
+    </script>
 </body>
 </html>
