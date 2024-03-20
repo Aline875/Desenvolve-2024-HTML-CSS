@@ -19,21 +19,36 @@
             pulaLinha();
         }
 
-        var login = aline;
-        var senha = aline123;
+        var login = "aline";
+        var senha = "aline123";
 
-        var loginInformado = prompt("Informeo login: ");
-        var senhaInformada = prompt("Informe a senha:");
+        var limiteTentativas = 3;
+        var tentativas = 1;
 
-        if(login == loginInformado && senha == senhaInformada)
+        
+
+        while(tentativas <= limiteTentativas)
         {
-            mostra("Login feito com sucesso!");
+
+            var loginInformado = prompt("Informe o login: ");
+            var senhaInformada = prompt("Informe a senha:");
+
+            if(login == loginInformado && senha == senhaInformada)
+            {
+                alert("Seja bem-vindo ao sistema " + loginInformado);
+                
+            }
+
+            else
+            {
+                mostra("Login ou senha incorretos")
+            }
         }
 
-        if(login != loginInformado || senha != senhaInformada)
-        {
-            mostra("Login ou senha incorretos");
-        }
+
+//irei iniciar um novo teste a partir daqui o que foi feito acima  não está funcinando, vou escrever a resolução do professor e descobrir qual p problema.
+//descobri o problema. Ai q cu o prblema era eu!!! Vou me apagar do codigo bye bye.
+//Nova atualização. Depois de descobrir o erro fui continuar com o programa ainda não sei oque falta mas o looping não para mesmo apos 3 tentativas. Vou seguir com o codigo do professor 
 
     </script>
 </body>
