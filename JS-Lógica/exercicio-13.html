@@ -25,8 +25,6 @@
         var limiteTentativas = 3;
         var tentativas = 1;
 
-        
-
         while(tentativas <= limiteTentativas)
         {
 
@@ -36,20 +34,30 @@
             if(login == loginInformado && senha == senhaInformada)
             {
                 alert("Seja bem-vindo ao sistema " + loginInformado);
+                tentativas = limiteTentativas
                 
             }
 
             else
             {
-                mostra("Login ou senha incorretos")
+                if(tentativas == 3)
+                {
+                    alert("Número de tentativas excedido!")
+                }
+                else
+                {
+                    alert("Login ou senha incorretos")
+                }  
             }
+
+            tentativas = tentativas + 1
         }
 
 
 //irei iniciar um novo teste a partir daqui o que foi feito acima  não está funcinando, vou escrever a resolução do professor e descobrir qual p problema.
 //descobri o problema. Ai q cu o prblema era eu!!! Vou me apagar do codigo bye bye.
 //Nova atualização. Depois de descobrir o erro fui continuar com o programa ainda não sei oque falta mas o looping não para mesmo apos 3 tentativas. Vou seguir com o codigo do professor 
-
+//Eu particularmente achei esse código um pouco confuso ele tem um "if and else" dentro de um "else" não sabia que dava para fazer esse tipo de coisa, vou revisar um pouco disso mais tarde.
     </script>
 </body>
 </html>
