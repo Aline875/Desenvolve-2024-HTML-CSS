@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercício 12</title>
+    <title>Exercício 13</title>
     <link rel="shortcut icon" href="/Public/icons8-javascript-32.png" type="image/x-icon">
 </head>
 <body>
     <script>
         //minha resolução 
-        //novamente tive que ir direto para a resolução do professor
-        //meu chrome ta bugado então ele não ta regarregando a pagina então lembre-se de encerrar o live server para que funcione direito.
         function pulaLinha()
         {
             document.write("<br><br>");
@@ -21,13 +19,22 @@
             pulaLinha();
         }
 
-        var contador = 20;
-        while(contador >=0 )
+        var login = aline;
+        var senha = aline123;
+
+        var loginInformado = prompt("Informeo login: ")
+        var senhaInformada = prompt("Informe a senha:")
+
+        if(login == loginInformado && senha == senhaInformada)
         {
-            mostra(contador)
-            contador = contador - 1;
+            mostra("Login feito com sucesso!")
         }
-        mostra("Fim");
+
+        if(login != loginInformado || senha != senhaInformada)
+        {
+            mostra("Login ou senha incorretos")
+        }
+
     </script>
 </body>
 </html>
