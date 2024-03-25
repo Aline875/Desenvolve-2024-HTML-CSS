@@ -17,6 +17,14 @@
             document.write(frase);
             pulaLinha();
         }
+        var idade = parseInt(prompt("Digite sua idade: "));
+        
+        while(isNaN(idade))
+        {
+            idade = parseInt(prompt("Digite sua idade: "));
+        }
+
+        mostra(idade);
     </script>
 </body>
 </html>
