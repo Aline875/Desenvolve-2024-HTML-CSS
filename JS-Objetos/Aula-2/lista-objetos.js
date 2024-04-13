@@ -1,4 +1,10 @@
-c
+const cliente = 
+{
+    nome: 'aline',
+    idade: 20,
+    email: 'alinebeatriz875@gmail.com',
+    telefone: ['587460638','87369782'],
+};
 
 cliente.enderecos =
 [
