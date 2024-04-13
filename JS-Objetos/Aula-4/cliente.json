@@ -1,0 +1,13 @@
+
+{
+    "nome": "aline",
+    "email": "alinebeatriz875@gmail.com",
+    "telefone": ["587460638","87369782"],
+    "enderecos":
+    {
+        "rua": "R. Mauro Mota.",
+        "numero": 67,
+        "apartamento": true,
+        "complemento": "apt 879"
+    }
+}
