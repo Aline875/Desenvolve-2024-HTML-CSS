@@ -74,6 +74,7 @@ pegarAqruivo('./arquivos/');
 
 //Houve uma segunda atualização no dia 18/04 ás 10:56. atualizamosa a funçaõ pega arquivo para que ela funcione de forma assincrona. Para lidarmos com isso nós reescrevemos a função pega arquivos e ainda utilizaremos a bibliteca "fs" porem com outros métodos nesse caso usaremos o método "then" que diz "faça essa tarefa e então ..."
 
+//19/04
 //As chamadas promises são "promessas" do javascript de que ele vai fazer alguma coisa e sempre utilizamos o "promises" estamos falando de código assincrcono.
 
 // Falando agora sobre "async/await". Onde utilizamos o método async? utilizamos para dizer que uma função deve ser resolvida antes que o resultado retorne. Já o "await" nós usamos onde deve-se aguardar
