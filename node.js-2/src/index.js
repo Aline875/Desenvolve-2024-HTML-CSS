@@ -11,7 +11,7 @@ function extraiLinks(texto)
         ({
            [ captura[1]]: captura [2]
         }))
-        return resultado;
+        return resultado.length !== 0 ? resultado: 'não há links nesse arquivo';
 }
 
 function trataErro(erro)
@@ -27,7 +27,7 @@ async function pegarAqruivo(caminhoArquivo)
     {
         const encoding = 'utf-8';
         const texto = await fs.promises.readFile(caminhoArquivo, encoding)
-         console.log(extraiLinks(texto))
+         return extraiLinks(texto);
     }
     catch (erro)
     {
@@ -35,7 +35,7 @@ async function pegarAqruivo(caminhoArquivo)
     }
 }
 
-pegarAqruivo('./arquivos/texto.md')
+export default pegarAqruivo;
 //pegarAqruivo('./arquivos/');
 
 
@@ -113,3 +113,4 @@ pegarAqruivo('./arquivos/texto.md')
 // na utlima linha eu disse que irianos usar um looping para resolver o problema do link, porem temos um método mais moderno que foi deixado no exemplo de código acima, nessa caso usamos o método "matchAll". Não entendi muito bem como ele funciona mas posso procurar mais sobre isso depois.
 
 // Agora que conseguimos pegar os links que estão no arquivo, como fazemos para que o código leia qualquer arquivo dado pelo terminal? Já que por paramentro estamos passando um caminho especifico para esté codigo. Iremos ver isso nesse aula 
+
