@@ -4,14 +4,27 @@ import pegarAqruivo from "./index.js";
 
 const caminho = process.argv;
 
-function imprimeLista(resultado)
+function imprimeLista(resultado, identificador = '')
 {
-    console.log(chalk.yellow('Lista de links'), resultado);
+    console.log(
+        chalk.yellow('Lista de links'),
+        chalk.black.bgGreen(identificador),
+        resultado);
 }
 
 async function processaTexto (argumentos)
 {
     const caminho = argumentos[2];
+
+    try
+    {
+        fs.lstatSync(caminho);
+    } catch (erro) 
+    {
+        if(erro.code === 'ENOENT')
+        console.log(chalk.red('Arquivo ou diretorio não existe.'));
+        return;
+    }
 
     if (fs.lstatSync(caminho).isFile())
     {
@@ -24,7 +37,7 @@ async function processaTexto (argumentos)
         arquivo.forEach (async (nomeDeArquivo) => 
         {
             const lista  = await pegarAqruivo(`${caminho}/${nomeDeArquivo}`)
-            imprimeLista(lista);
+            imprimeLista(lista, nomeDeArquivo);
         })
     }
 
@@ -47,3 +60,13 @@ processaTexto(caminho);
 // Podemos usar os métodos do fs para perguntar se é um arquivo ou diretorio, porem no caso de der true para p diretorio teremos que fazer com ele leia todos os arquivos a procura dos links
 
 // O código inicialmente não funcinou pois precisamos deixar o "forEach" assincrono tambem.
+
+//Atualização dia 23/04
+
+// Quando passamos o muitas vezes quando passamos o diretorio para a pesquisa é inevitavel que erros de escrita aconteçam, como escrever "arquivo" em vez de "arquivos", nesse caso o terminal retonará um erro, mas como um usuário comum vai identificar esse erro? Para nós é muito mais facil saber o que está errado mas um usuário comum não saberia, nesse caso na atualização de hoje vamos tratar erros de escrita e deixar a identificação de erro mais facil.
+
+// No caso do erro do diretorio enexistente nós procuramos no terminal o status desse erro, ou seja procuramos o "code:...", como nesse erro por exemplo o status retornado foi "code: 'ENOENT'" ou "erro sem entidade". Mas mesmo identificando o erro e tratando-o o resto do texto de erro continua aparecendo, então para que isso não aconteça deixamos apenas um "return".
+
+// Quando nós passamos apenas o diretorio não sabemos exatamento qual arquivo está sendo impresso na tela. Não seria interessante se pudessemos saber qual arquivo estamos imprimindo? No exemplo acima utilizamos o "identificador" para guarda o nome do arquivo e imprimir ele na function "processaTexto". Porem ao fazermos isso, quando passarmos o nome do arquivo que queremos acessar, ele  tambem retornará algo, no caso teremos um "undefined". Resolveremos isso no exemplo acima. Como vimos anteriormente nós podemos apenas deixar o "identificador" como uma string vázia.
+
+// Fizemos uma modificação no "package.json" para que possamos utilizar um comando menos extenso para acessar o "cli". Exemplo " "cli":"node ./src/cli.js" " dentro do "scripts".
