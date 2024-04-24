@@ -1,22 +1,33 @@
 import chalk from "chalk";
 import fs from 'fs';
 import pegarAqruivo from "./index.js";
+import listaValidada from "./http-validacao.js";
 
 const caminho = process.argv;
 
-function imprimeLista(resultado, identificador = '')
+function imprimeLista(valida ,resultado, identificador = '')
 {
-    console.log(
-        chalk.yellow('Lista de links'),
-        chalk.black.bgGreen(identificador),
-        resultado);
+    if(valida)
+    {
+        console.log(
+            chalk.blue('Lista validada'),
+            chalk.black.bgGreen(identificador),listaValidada(resultado)); 
+    }
+    else
+    {
+        
+            console.log(
+                chalk.yellow('Lista de links'),
+                chalk.black.bgGreen(identificador),resultado);
+    }
 }
 
 async function processaTexto (argumentos)
 {
     const caminho = argumentos[2];
-
-    try
+    const valida = argumentos[3] === '--valida';
+     
+      try
     {
         fs.lstatSync(caminho);
     } catch (erro) 
@@ -29,7 +40,7 @@ async function processaTexto (argumentos)
     if (fs.lstatSync(caminho).isFile())
     {
         const resultado = await pegarAqruivo(caminho);
-        imprimeLista(resultado);
+        imprimeLista(valida, resultado);
     }
     else if (fs.lstatSync(caminho).isDirectory)
     {
@@ -37,7 +48,7 @@ async function processaTexto (argumentos)
         arquivo.forEach (async (nomeDeArquivo) => 
         {
             const lista  = await pegarAqruivo(`${caminho}/${nomeDeArquivo}`)
-            imprimeLista(lista, nomeDeArquivo);
+            imprimeLista(valida, lista, nomeDeArquivo);
         })
     }
 
@@ -45,6 +56,7 @@ async function processaTexto (argumentos)
 
 processaTexto(caminho);
 
+// VERSÃO DO NODE NO NVM É 18.7.0
 
 //Após montarmos o código para a leitura dos arquivos ".md" paraf pegar os links, criamos esse novo  arquivo para pegar a informações do terminal e parac isso criamos uma nova "const" com o método "process" e o ".argv", para que possamos pegar essas informações como argumento para ser passado para o código.
 
@@ -70,3 +82,7 @@ processaTexto(caminho);
 // Quando nós passamos apenas o diretorio não sabemos exatamento qual arquivo está sendo impresso na tela. Não seria interessante se pudessemos saber qual arquivo estamos imprimindo? No exemplo acima utilizamos o "identificador" para guarda o nome do arquivo e imprimir ele na function "processaTexto". Porem ao fazermos isso, quando passarmos o nome do arquivo que queremos acessar, ele  tambem retornará algo, no caso teremos um "undefined". Resolveremos isso no exemplo acima. Como vimos anteriormente nós podemos apenas deixar o "identificador" como uma string vázia.
 
 // Fizemos uma modificação no "package.json" para que possamos utilizar um comando menos extenso para acessar o "cli". Exemplo " "cli":"node ./src/cli.js" " dentro do "scripts".
+
+//Nova atulização
+
+// Novamente criamos uma atualização para o "package.json", neste caso adicionamos ao script uma nova linha para que possamos utilizar o comando "npm rub cli: valida" onde vamos fazer a validação dos links.

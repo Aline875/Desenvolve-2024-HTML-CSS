@@ -39,6 +39,8 @@ export default pegarAqruivo;
 //pegarAqruivo('./arquivos/');
 
 
+// VERSÃO DO NODE NO NVM É 18.7.0
+
 //Código sobre "promises"
 // function pegarAqruivo(caminhoArquivo) 
 // {
