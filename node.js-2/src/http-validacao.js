@@ -1,4 +1,4 @@
-
+import chalk from "chalk";
 function extraiLinks(arrlinks) 
 {
   return arrlinks.map((ObjectoLink) => Object.values(ObjectoLink).join()) 
@@ -9,18 +9,36 @@ async function checaStatus (listaUrls)
   const arrayStatus = await Promise.all(
     listaUrls.map(async(url) => 
     {
-      const response = await fetch (url)
-      return response.status;
+      try {
+        const response = await fetch (url)
+        return response.status;
+      } catch (erro) {
+        return manejaErros(erro);
+      }
     })  
   )
   return arrayStatus
 }
   
+function manejaErros(erro) 
+{
+  if (erro.cause.code === 'ENOTFOUND') 
+  {
+    return 'link não encontrado.'
+  } 
+  else
+  {
+    return 'ocorreu algum erro'
+  }
+}
  export default async function listaValidada(listaDeLinks)
     {
       const links = extraiLinks(listaDeLinks);
       const status = await checaStatus(links);
-      return status;
+      return listaDeLinks.map((objeto, indice)=> (
+        {
+          ...objeto, status: status[indice]
+        }));
     }
 
     //[gatinho salsicha](http://gatinhosalsicha.com.br/)
@@ -53,4 +71,10 @@ async function checaStatus (listaUrls)
 //   console.log(data);
 // }
 
-//Como colocamos um método "map" no código nos tambem precisamo deixar claro dentro do "map" que ele é uma função async se não o código não funciona, no momento para nós a promessa ainda voltou pendente o que significa que ainda tem algum código assincrono que não indentificamos. Nesse caso o problema está na function "checaStatus" já que o "fetch" só lida com um caso por vez a maneira de resolver vai estar no código acima
+//Como colocamos um método "map" no código nos tambem precisamo deixar claro dentro do "map" que ele é uma função async se não o código não funciona, no momento para nós a promessa ainda voltou pendente o que significa que ainda tem algum código assincrono que não indentificamos. Nesse caso o problema está na function "checaStatus" já que o "fetch" só lida com um caso por vez a maneira de resolver vai estar no código acima.
+
+// Nova atualização iremos incrementar a nossa function "listaValidada" para que ela retorna tanto a lista de links quanto o status code desses links.
+
+// Lembre-se que para retornar um objeto precisamos englobar as "chaves" dentro de um "parenteses" ou seja "({})". 
+
+//O programa da erro quando tenta ler o "gatinho salsicha" pois é um endereço que não existe dessa maneira ele não consegue acessa-lo e não consegue retornar um status code.
