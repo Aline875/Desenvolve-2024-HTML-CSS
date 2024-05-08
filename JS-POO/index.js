@@ -9,8 +9,11 @@ const novoAdmin = new Admin ('Arthur','arthur@gmail.com','16-03-2010')
 // console.log(novoAdmin.exibirInfos())
 // console.log(novoAdmin.nomeAdmin())
 console.log(novoAdmin.nome)
-novoAdmin.nome = ''
+novoAdmin.nome = 'beta'
 console.log(novoAdmin.nome)
+
+const novoDocente = new Docente ('Antonio', 'ninho@gmail.com', '05-03-1975')
+console.log(novoDocente.exibirInfos())
 
 // Agora falaremos sobre encapsulamento. Em POO usamos o encapsulamento não queremos que certas infomações sejam acessadas por fora do objeto, como o nome de usuário por exemplo, que não deve ser modificaso a menos que o usuário solicite a mudança. Para trabalhar com o encapsulamento usamos o método "private". No exemplo acima usaremos o parametro "nome" para explicar e exemplificar o encapsulamento.
 

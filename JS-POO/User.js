@@ -84,3 +84,10 @@ export default class User
 //Com relação a esse dois métodos o "get" não aceita nenhum parametro e o  "set" aceita somente uma parametro, normalmente quando vamos atribuir um novo valor.
 
 //Como nome já é uma propriedade privada usamos o set para modifica-la, porém como visto anteriormente o método "set" pode receber somente um parametro, e esse parametro é usado para  montar lógicas dentro da modificaçõa da propriedade. Podemos fazer uma vereficação de caracteres por exemplo.
+
+//Trabalharemos agora com o polismorfismo, onde temos os mesmo método com funções diferente, vou dar um exemplo, quando criamos o "constructor" do "docente" usamos os mesmos parametro de "user" e "admin" porem como podemos ver abaixo o "role" para "docente" é diferente tanto para "admin" quando para "user" dessa forma nós reotilizamos a estrutura  e modificamos apenas o que adequa a situação.
+
+// constructor(nome, email, nascimento, role = 'docente' , ativo = true)
+// {
+//     super(nome, email, nascimento, role, ativo)
+// }
