@@ -16,9 +16,54 @@ export default class User
         this.#ativo = ativo
     }
 
+    get nome()
+    {
+        return this.#nome
+    }
+
+    get email()
+    {
+        return this.#email
+    }
+
+    get nascimento()
+    {
+        return this.#nascimento
+    }
+
+    get role()
+    {
+        return this.#role
+    }
+
+    get ativo()
+    {
+        return this.#ativo
+    }
+
+    set nome(novoNome)
+    {
+        if (novoNome === '')
+        {
+            throw new Error('Formato inválido')
+        }
+        this.#nome = novoNome
+    }
+
+    // #montaObjUser()
+    // {
+    //     return ({
+    //         nome: this.#nome,
+    //         email: this.#email,
+    //         nascimento: this.#nascimento,
+    //         role: this.#role,
+    //         ativo: this.#ativo
+    //     })
+    // }
+
     exibirInfos()
     {
-        return `${this.#nome}, ${this.#email}`
+        return `${this.nome}, ${this.email}, ${this.nascimento}, ${this.role}, ${this.ativo}`
     }
 }
 
@@ -32,3 +77,10 @@ export default class User
 // Quando estamos trabalhando dentro de uma classe não precisamos declarar a function apenas escrever o nomedelae que aplicar o que for necessário.
 //Trabalhando com modulos de exportação nós precisamos adicionar uma propriedade ao "package.json", neste caso usamos o " "type":"module" ".
 
+//Atualização dia 08/05
+
+//Anteriormente usamos o "#montaObj" para pegar a propriedades privadas e mandar para um método publico, mas neste momento estamos usando o método "get" para fazer isso. Vou deixar o exemplo acima do "montaObj" e o método "get".
+
+//Com relação a esse dois métodos o "get" não aceita nenhum parametro e o  "set" aceita somente uma parametro, normalmente quando vamos atribuir um novo valor.
+
+//Como nome já é uma propriedade privada usamos o set para modifica-la, porém como visto anteriormente o método "set" pode receber somente um parametro, e esse parametro é usado para  montar lógicas dentro da modificaçõa da propriedade. Podemos fazer uma vereficação de caracteres por exemplo.
