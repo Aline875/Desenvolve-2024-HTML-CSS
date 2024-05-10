@@ -7,6 +7,13 @@ const titulo = document.querySelector('.app__title')
 const botoes = document.querySelectorAll('.app__card-button')
 const buttonMusica = document.querySelector('#alternar-musica')
 const musica = new Audio('/Fokus-projeto-base/sons/luna-rise-part-one.mp3')
+const audioPlay = new Audio('/Fokus-projeto-base/sons/play.wav')
+const audioPause = new Audio('/Fokus-projeto-base/sons/pause.mp3')
+const audioZero = new Audio('/Fokus-projeto-base/sons/beep.mp3')
+const buttonStartPause = document.querySelector('#start-pause')
+
+let tempoDecorridoEmSegundos = 5
+let intevaloId = null
 
 musica.loop = true
 
@@ -69,7 +76,38 @@ function alteraContexto(contexto)
 
 }
 
+const contagemRegressiva = ()=>
+{
+  if(tempoDecorridoEmSegundos <= 0)
+  {
+    audioZero.play() 
+    zerar()
+    alert('Tempo finalizado!')
+    return
+  }
+    tempoDecorridoEmSegundos -=1
+    console.log('Temporizado: ' + tempoDecorridoEmSegundos)
+}
 
+buttonStartPause.addEventListener('click', inicarOuPausar)
+
+function inicarOuPausar()
+{
+    if(intevaloId)
+    {
+        audioPlay.play()
+        zerar()
+        return
+    }
+    audioPause.play()
+    intevaloId = setInterval(contagemRegressiva, 1000)
+}
+
+function zerar()
+{
+    clearInterval(intevaloId)
+    intevaloId = null
+}
 
 // buttonFoco.addEventListener('click', () =>
 // {
@@ -104,3 +142,7 @@ function alteraContexto(contexto)
 //Para fazermos a aplicação dos estilos de css nos botaões utilizamos o método "classList" que adiciona ou remove classes.
 
 //Para adicionarmos o audio no projeto precisamos adiciona-lo dentro de uma variavel, podeoms usar outro método como o "readFile()" mas isso atrapalharia um pouco a experiencia do usuario por isso adicionamos o audio a uma variavel.
+
+//Achei o temporizador um pouco mais dificil de entender, mas iniciamos declarando duas variáveis "let tempoDecorridoEmSegundos = 5 let intevaloId = null" que utilizaremos para montar o temporizador.Depolis montamos a contagem regressiva e o de iniciar.
+
+//Temos que tomar cuidado com o temporazador, nós não indicamos onde o contador deve parar.
