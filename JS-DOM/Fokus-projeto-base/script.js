@@ -6,13 +6,18 @@ const banner = document.querySelector('.app__image')
 const titulo = document.querySelector('.app__title')
 const botoes = document.querySelectorAll('.app__card-button')
 const buttonMusica = document.querySelector('#alternar-musica')
-const musica = new Audio('/Fokus-projeto-base/sons/luna-rise-part-one.mp3')
-const audioPlay = new Audio('/Fokus-projeto-base/sons/play.wav')
-const audioPause = new Audio('/Fokus-projeto-base/sons/pause.mp3')
-const audioZero = new Audio('/Fokus-projeto-base/sons/beep.mp3')
 const buttonStartPause = document.querySelector('#start-pause')
+const buttonInicarOuPausar = document.querySelector('#start-pause span')
+const inicarOuPausarIcon = document.querySelector('.app__card-primary-butto-icon')
+const tempoNaTela = document.querySelector('#timer')
 
-let tempoDecorridoEmSegundos = 5
+
+const musica = new Audio('/Fokus-projeto-base/sons/luna-rise-part-one.mp3')
+const audioPlay = new Audio('/Fokus-projeto-base/sons/pause.mp3')
+const audioPause = new Audio('/Fokus-projeto-base/sons/play.wav')
+const audioZero = new Audio('/Fokus-projeto-base/sons/beep.mp3')
+
+let tempoDecorridoEmSegundos = 1500 
 let intevaloId = null
 
 musica.loop = true
@@ -31,24 +36,28 @@ buttonMusica.addEventListener('change', ()=>
 
 buttonFoco.addEventListener('click', () =>
 {
+    tempoDecorridoEmSegundos = 1500
     alteraContexto('foco')
     buttonFoco.classList.add('active')
 })
 
 buttonCurto.addEventListener('click', () =>
 {
+    tempoDecorridoEmSegundos = 300
     alteraContexto('descanso-curto')
     buttonCurto.classList.add('active')
 })
 
 buttonLongo.addEventListener('click', () =>
 {
+    tempoDecorridoEmSegundos = 900
     alteraContexto('descanso-longo')
     buttonLongo.classList.add('active')
 })
 
 function alteraContexto(contexto)
 {
+    mostrarTempo()
     botoes.forEach(function(contexto)
     {
         contexto.classList.remove('active')
@@ -86,7 +95,7 @@ const contagemRegressiva = ()=>
     return
   }
     tempoDecorridoEmSegundos -=1
-    console.log('Temporizado: ' + tempoDecorridoEmSegundos)
+    mostrarTempo()
 }
 
 buttonStartPause.addEventListener('click', inicarOuPausar)
@@ -101,13 +110,26 @@ function inicarOuPausar()
     }
     audioPause.play()
     intevaloId = setInterval(contagemRegressiva, 1000)
+    buttonInicarOuPausar.textContent = "Pausar"
+    inicarOuPausarIcon.setAttribute('src', '/Fokus-projeto-base/imagens/pause.png')
 }
 
 function zerar()
 {
     clearInterval(intevaloId)
+    buttonInicarOuPausar.textContent = "Começar"
     intevaloId = null
+    inicarOuPausarIcon.setAttribute('src', '/Fokus-projeto-base/imagens/play_arrow.png')
 }
+
+function mostrarTempo()
+{
+    const tempo = new Date(tempoDecorridoEmSegundos * 1000)
+    const tempoFormatado = tempo.toLocaleTimeString('pt-br', {minute: '2-digit', second: '2-digit'})
+    tempoNaTela.innerHTML = `${tempoFormatado}`
+}
+
+mostrarTempo()
 
 // buttonFoco.addEventListener('click', () =>
 // {
