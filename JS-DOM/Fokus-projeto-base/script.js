@@ -4,24 +4,48 @@ const buttonCurto = document.querySelector('.app__card-button--curto')
 const buttonLongo = document.querySelector('.app__card-button--longo')
 const banner = document.querySelector('.app__image')
 const titulo = document.querySelector('.app__title')
+const botoes = document.querySelectorAll('.app__card-button')
+const buttonMusica = document.querySelector('#alternar-musica')
+const musica = new Audio('/Fokus-projeto-base/sons/luna-rise-part-one.mp3')
+
+musica.loop = true
+
+buttonMusica.addEventListener('change', ()=>
+{
+    if(musica.paused)
+    {
+        musica.play()
+    }
+    else
+    {
+        musica.pause()
+    }
+})
 
 buttonFoco.addEventListener('click', () =>
 {
     alteraContexto('foco')
+    buttonFoco.classList.add('active')
 })
 
 buttonCurto.addEventListener('click', () =>
 {
     alteraContexto('descanso-curto')
+    buttonCurto.classList.add('active')
 })
 
 buttonLongo.addEventListener('click', () =>
 {
     alteraContexto('descanso-longo')
+    buttonLongo.classList.add('active')
 })
 
 function alteraContexto(contexto)
 {
+    botoes.forEach(function(contexto)
+    {
+        contexto.classList.remove('active')
+    })
     html.setAttribute('data-contexto', contexto)
     banner.setAttribute('src', `/Fokus-projeto-base/imagens/${contexto}.png`)
     switch (contexto) {
@@ -42,6 +66,7 @@ function alteraContexto(contexto)
         default:
             break;
     }
+
 }
 
 
@@ -75,3 +100,7 @@ function alteraContexto(contexto)
 //No exemplo acima vemos que o código ficou um tanto quanto repetitivo como podemos refatorar esté código para ficar p mais breve possivel? veja no exemplo acima.
 
 //Agora a pouco usamos um novo método "innerHTML" que é usado quando queremos adicionar um texto e algumas tags html.
+
+//Para fazermos a aplicação dos estilos de css nos botaões utilizamos o método "classList" que adiciona ou remove classes.
+
+//Para adicionarmos o audio no projeto precisamos adiciona-lo dentro de uma variavel, podeoms usar outro método como o "readFile()" mas isso atrapalharia um pouco a experiencia do usuario por isso adicionamos o audio a uma variavel.
