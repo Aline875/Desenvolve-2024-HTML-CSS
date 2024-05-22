@@ -12,10 +12,10 @@ const inicarOuPausarIcon = document.querySelector('.app__card-primary-butto-icon
 const tempoNaTela = document.querySelector('#timer')
 
 
-const musica = new Audio('/Fokus-projeto-base/sons/luna-rise-part-one.mp3')
-const audioPlay = new Audio('/Fokus-projeto-base/sons/pause.mp3')
-const audioPause = new Audio('/Fokus-projeto-base/sons/play.wav')
-const audioZero = new Audio('/Fokus-projeto-base/sons/beep.mp3')
+const musica = new Audio('sons/luna-rise-part-one.mp3')
+const audioPlay = new Audio('sons/pause.mp3')
+const audioPause = new Audio('sons/play.wav')
+const audioZero = new Audio('sons/beep.mp3')
 
 let tempoDecorridoEmSegundos = 1500 
 let intevaloId = null
@@ -63,7 +63,7 @@ function alteraContexto(contexto)
         contexto.classList.remove('active')
     })
     html.setAttribute('data-contexto', contexto)
-    banner.setAttribute('src', `/Fokus-projeto-base/imagens/${contexto}.png`)
+    banner.setAttribute('src', `imagens/${contexto}.png`)
     switch (contexto) {
         case "foco":
             titulo.innerHTML = `Otimize sua produtividade,<br>
@@ -111,7 +111,7 @@ function inicarOuPausar()
     audioPause.play()
     intevaloId = setInterval(contagemRegressiva, 1000)
     buttonInicarOuPausar.textContent = "Pausar"
-    inicarOuPausarIcon.setAttribute('src', '/Fokus-projeto-base/imagens/pause.png')
+    inicarOuPausarIcon.setAttribute('src', 'imagens/pause.png')
 }
 
 function zerar()
@@ -119,7 +119,7 @@ function zerar()
     clearInterval(intevaloId)
     buttonInicarOuPausar.textContent = "Começar"
     intevaloId = null
-    inicarOuPausarIcon.setAttribute('src', '/Fokus-projeto-base/imagens/play_arrow.png')
+    inicarOuPausarIcon.setAttribute('src', 'imagens/play_arrow.png')
 }
 
 function mostrarTempo()
