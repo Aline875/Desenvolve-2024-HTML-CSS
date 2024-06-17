@@ -9,8 +9,28 @@ function filtrarLivros()
 {
     const elementoBtn = document.getElementById(this.id)
     const categoria = elementoBtn.value
-    const livrosFiltrados = livros.filter(livro => livro.categoria == categoria)
+    const livrosFiltrados = categoria == 'disponivel' ? filtrarPorDisponibilidade() : filtrarPorCategoria(categoria)
     exibirLivrosNaTela(livrosFiltrados)
+    if(categoria == 'disponivel')
+    {
+        const valorTotal = calcularValorTotal(livrosFiltrados)
+        exibirValorDosLivros(valorTotal)
+    }
+}
+
+function filtrarPorCategoria(categoria) {
+    return livros.filter(livro => livro.categoria == categoria)
+}
+
+function filtrarPorDisponibilidade() {
+    return livros.filter(livro => livro.quantidade > 0)
+}
+
+function exibirValorDosLivros(valorTotal)
+{
+    elementoValorLivros.innerHTML = `<div class="livros__disponiveis">
+    <p>Todos os livros disponíveis por R$ <span id="valor">${valorTotal}</span></p>
+  </div>`
 }
 
 //No código acima temos um filtro que pega todos os livros de front-end, mas na nossa situação atual temos um filtro espefcifico para cada botão "front-end", "back-end" e etc. Para que  possamos atribuir este filtro em cada um desses botões usamos o "querySelectorAll" que procura tudo que tem a mesma classe. Como no exemplo acima que estamos procurando todos os "btn".
