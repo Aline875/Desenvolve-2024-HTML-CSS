@@ -26,11 +26,11 @@ return video;
 async function listaVideo()
 {
     const listaApi = await conectaApi.listaVideos();
-    listaApi.foreach(elemento => lista.appendChild(constroiCard(elemento.titulo, elemento.descricao, elemento.url, elemento.imagem)))
+    listaApi.forEach(elemento => lista.appendChild(constroiCard(elemento.titulo, elemento.descricao, elemento.url, elemento.imagem)))
 }
 
 listaVideo()
 
-//no exemplo acimautilizamos o foreach para melhor entendimento vou escrever a leitura do código. "para cada item da lista da api cria-se um card (li) que foi anexada dentro da ul que estamos referencniando como 'lista'"
+//no exemplo acima utilizamos o foreach para melhor entendimento vou escrever a leitura do código. "para cada item da lista da api cria-se um card (li) que foi anexada dentro da ul que estamos referencniando como 'lista'"
 
 
