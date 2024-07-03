@@ -6,7 +6,7 @@ const lista = document.querySelector("[data-lista]")
 
 // No exemplo acima adicionamos um "data atributes" que serve pra individualizar os elementos e conseguir manipular o dom atraves deles. Como podem ver escrevemos "data-" e um nome qualquer.
 
-function constroiCard(titulo, descricao, url, imagem)
+export default function constroiCard(titulo, descricao, url, imagem)
 {
     const video = document.createElement("li");
     video.className = "videos__item";
@@ -25,8 +25,15 @@ return video;
 
 async function listaVideo()
 {
+    try{
     const listaApi = await conectaApi.listaVideos();
-    listaApi.forEach(elemento => lista.appendChild(constroiCard(elemento.titulo, elemento.descricao, elemento.url, elemento.imagem)))
+    listaApi.forEach(elemento => lista.appendChild(
+        constroiCard(elemento.titulo, elemento.descricao, elemento.url, elemento.imagem)))
+    }
+    catch
+    {
+        lista.innerHTML=`<h2 class="mensagem__titulo">Não foi possível carregar a lista de vídeos<h2>`
+    }
 }
 
 listaVideo()
