@@ -1,14 +1,29 @@
 import ehUmCPF from "./valida-cpf.js";
 import ehMaiorDeidade from "./valida-idade.js";
 
-const camposDoFormulario = document.querySelectorAll("[required]")
+const camposDoFormulario = document.querySelectorAll('[required]')
+const formulario = document.querySelector('[data-formulario]')
 
+formulario.addEventListener("submit", (e) => 
+{
+    e.preventDefault();
+
+    const listaRespostas = {
+        "nome": e.target.elements["nome"].value,
+        "email": e.target.elements["email"].value,
+        "rg": e.target.elements["rg"].value,
+        "cpf": e.target.elements["cpf"].value,
+        "aniversario": e.target.elements["aniversario"].value,
+    } 
+
+    localStorage.setItem("cadastro", JSON.stringify(listaRespostas));
+
+    window.location.href = '../pages/abrir-conta-form-2.html';
+})
 camposDoFormulario.forEach((campo)=>
 {
-    campo.addEventListener("blur", ()=>
-    {
-        verificaCampo(campo);
-    })
+    campo.addEventListener("blur", ()=> verificaCampo(campo));
+    campo.addEventListener("invalid", evento => evento.preventDefaut())
 })
 
 const tiposDeErro = 
@@ -17,7 +32,7 @@ const tiposDeErro =
     'typeMismatch',
     'patternMismatch',
     'tooShort',
-    'custmonError'
+    'customError'
 ]
 
 const mensagens = {
@@ -53,6 +68,8 @@ const mensagens = {
 
 function verificaCampo(campo)
 {
+    let mensagem = "";
+    campo.setCustomValidity('');
     if (campo.name == "cpf" && campo.value.length >= 11)
     {
         ehUmCPF(campo);
@@ -62,4 +79,26 @@ function verificaCampo(campo)
     {
         ehMaiorDeidade(campo);
     }
+    tiposDeErro.forEach(erro => {
+        if(campo.validity[erro]) {
+            mensagem = mensagens[campo.name][erro];
+        }
+    })
+    //Imprimindo a mensagem na tela 
+    const mensagemErro = campo.parentNode.querySelector('.mensagem-erro');
+    const validadorDeInput = campo.checkValidity();
+
+    if(!validadorDeInput)
+    {
+        mensagemErro.textContent = mensagem;
+    }
+    else
+    {
+        mensagemErro.textContent ="";
+    }
+
 }
+
+//Para imprimir as mensagens de erro na tela nos usamos o metódo "forEach" ou seja para cada erro encontrado impirmiremos uma  mensagens de acordo com o tipo do erro, como deixamos claro usando o "if" se cada campo retornar true com um erro imprima a mensagem de acordo com o tipo.
+
+//No área "imprimindo a mensagem na tela". Não sei explicar exatamente oque está acontecendo mas o "mensagemErro" está bucando as mensagens de erro existentes dentro do código (preciso pesquisar oque é esse "parentNode", aparentemente ele faz com que a mensagem apareça só no input clicado, mas não tenho certeza). Já o "validadorDeInput" chaca a validação do input. Caso o contéudo for se provado um erro a mensagem será impressa, caso não o processo continuará normalmente.
