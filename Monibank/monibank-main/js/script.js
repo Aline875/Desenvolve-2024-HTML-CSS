@@ -11,6 +11,16 @@ camposDoFormulario.forEach((campo)=>
     })
 })
 
+const tiposDeErro = 
+[
+    'valueMissing',
+    'typeMismatch',
+    'patternMismatch',
+    'tooShort',
+    'custmonError'
+]
+
+
 function verificaCampo(campo)
 {
     if (campo.name == "cpf" && campo.value.length >= 11)
