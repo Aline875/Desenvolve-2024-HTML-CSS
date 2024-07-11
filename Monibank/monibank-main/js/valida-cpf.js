@@ -67,7 +67,7 @@ function validaSgundoDigito(cpf)
     return soma != cpf[10];
 }
 
-//Nessa função iremos verificar o primeiro digito do cpf. Pegamos os 9 primeiros digitos do cpf e atribuimos um valor decrescente de 10 a 2, com isso usamos o laço for para passar por todos esses numeros, o multiplicador é usado após a tribuição de valores e vai multiplicar os digitos do cpf pela sua  posição. Exemplo do cpf base abaixo.
+//Nessa função iremos verificar o primeiro digito do cpf. Pegamos os 9 primeiros digitos do cpf e atribuimos um valor decrescente de 10 a 2, com isso usamos o laço for para passar por todos esses números, o multiplicador é usado após a atribuição de valores e vai multiplicar os digitos do cpf pela sua  posição. Exemplo do cpf base abaixo.
 
 //937.777.040-83
 // 9  | 3  |  7  |  7  | 7 | 7 | 0 | 4 | 0
